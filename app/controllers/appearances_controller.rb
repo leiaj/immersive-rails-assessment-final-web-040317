@@ -11,6 +11,19 @@ class AppearancesController < ApplicationController
     else
       redirect_to new_appearance_path
     end
+
+    def edit
+      @appearance = Appearance.find(params[:id])
+    end
+
+    def update
+      @appearance = Appearance.find(params[:id])
+      @appearance.update(appearance_params)
+      redirect_to guest_path(@guest)
+    end
+
+
+
   end
 
   private
