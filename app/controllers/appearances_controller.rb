@@ -14,10 +14,12 @@ class AppearancesController < ApplicationController
 
     def edit
       @appearance = Appearance.find(params[:id])
+      #why is this returning nil
     end
 
     def update
       @appearance = Appearance.find(params[:id])
+      #why is this returning nil
       @appearance.update(appearance_params)
       redirect_to guest_path(@guest)
     end
