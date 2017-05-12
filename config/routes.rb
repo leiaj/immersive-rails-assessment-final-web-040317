@@ -2,9 +2,9 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   resources :guests, only: [:index, :show]
   resources :episodes, only: [:index, :show]
-  resources :appearances, only: [:new, :create]
-  get '/appearances/:id/edit', to: 'appearances#edit', as: 'edit_appearance'
-  patch '/appearances/:id', to: 'appearances#update'
+  resources :appearances, only: [:new, :create, :edit, :update]
+  get '/appearances/:id/edit', to: 'appearances#edit'
+  patch '/appearances/:id/edit', to: 'appearances#update'
 
 
   get '/login', to: 'sessions#new', as: 'login'
